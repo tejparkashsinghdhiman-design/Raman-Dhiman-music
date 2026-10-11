@@ -48,7 +48,8 @@ export function coverURL(seedStr) {
     `<circle cx='${cx.toFixed(0)}' cy='${cy.toFixed(0)}' r='${rad.toFixed(0)}' fill='url(#c)'/>` +
     `<path d='${d}' fill='none' stroke='#fff' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' stroke-opacity='.92'/>` +
     `<circle cx='14' cy='${ly.toFixed(0)}' r='7' fill='#fff'/><circle cx='386' cy='${ly.toFixed(0)}' r='7' fill='#fff'/></svg>`;
-  const url = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  // encodeURIComponent leaves ' untouched, which would end a CSS url('...') early (the About portrait). Encode it too.
+  const url = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg).replace(/'/g, '%27');
   cache.set(key, url);
   return url;
 }
