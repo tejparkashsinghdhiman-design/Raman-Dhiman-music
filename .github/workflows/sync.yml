@@ -1,0 +1,42 @@
+name: Sync stats and releases
+
+# Keeps data/stats.json and data/catalog.json current: Apple Music releases and previews, Spotify listeners,
+# and (if you add the secrets) Spotify followers and YouTube numbers.
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # every 6 hours
+  workflow_dispatch:          # the "Run workflow" button on the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch the latest numbers
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node scripts/sync.mjs
+      - name: Commit if anything changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+          else
+            git commit -m "Sync stats and releases"
+            git pull --rebase --autostash
+            git push
+          fi

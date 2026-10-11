@@ -1,0 +1,41 @@
+name: Build audio tiers
+
+# Add a FLAC (or WAV) master to audio/lossless/ and this builds the High (MP3 320) and Data saver (MP3 128)
+# versions, reads the real sample rate and bit depth, and updates data/catalog.json.
+on:
+  push:
+    paths:
+      - "audio/lossless/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Build tiers
+        run: node scripts/process-audio.mjs
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A audio data
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+          else
+            git commit -m "Build audio tiers"
+            git pull --rebase --autostash
+            git push
+          fi

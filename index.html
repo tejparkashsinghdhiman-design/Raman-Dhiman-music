@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Raman Dhiman</title>
+  <meta name="description" content="Raman Dhiman's music in lossless audio, with live stats and the story behind the songs.">
+  <meta name="theme-color" content="#120C36">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+  <script>
+    // Apply the saved theme before first paint to avoid a flash.
+    try { var t = JSON.parse(localStorage.getItem('rd:theme')); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="shell">
+    <nav class="rail" aria-label="Main">
+      <a class="brand" href="#/" aria-label="Raman Dhiman, home">
+        <img src="assets/icon.svg" alt="" width="42" height="42">
+        <span>Raman<br>Dhiman</span>
+      </a>
+      <ul class="navlist">
+        <li><a href="#/" data-route="home"><span data-icon="disc"></span><span>Listen</span></a></li>
+        <li><a href="#/stats" data-route="stats"><span data-icon="bars"></span><span>Stats</span></a></li>
+        <li><a href="#/about" data-route="about"><span data-icon="user"></span><span>About</span></a></li>
+        <li><a href="#/drafts" data-route="drafts"><span data-icon="pen"></span><span>Drafts</span></a></li>
+        <li><a href="#/settings" data-route="settings"><span data-icon="sliders"></span><span>Settings</span></a></li>
+      </ul>
+      <p class="sync" id="syncStatus" role="status"></p>
+    </nav>
+    <main id="main" tabindex="-1"></main>
+  </div>
+
+  <footer id="pb" class="pb" hidden>
+    <button class="pb-track" id="pbOpen" type="button" aria-label="Open now playing">
+      <img id="pbCover" alt="" width="52" height="52">
+      <span class="pb-meta"><b id="pbTitle"></b><small id="pbSub"></small></span>
+    </button>
+    <div class="pb-ctrl">
+      <button class="icon-btn" id="pbPrev" type="button" aria-label="Previous track" data-icon="prev"></button>
+      <button class="icon-btn play" id="pbPlay" type="button" aria-label="Play"></button>
+      <button class="icon-btn" id="pbNext" type="button" aria-label="Next track" data-icon="next"></button>
+    </div>
+    <div class="pb-seek">
+      <span id="pbCur" class="time">0:00</span>
+      <input class="range" id="pbSeek" type="range" min="0" max="1000" value="0" aria-label="Seek">
+      <span id="pbDur" class="time">0:00</span>
+    </div>
+    <div class="pb-right">
+      <button class="qchip" id="pbQuality" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="qmenu"><i class="dot"></i><span id="pbQLabel">Auto</span></button>
+      <button class="icon-btn pb-mute" id="pbMute" type="button" aria-label="Mute"></button>
+      <input class="range pb-vol" id="pbVol" type="range" min="0" max="100" value="90" aria-label="Volume">
+    </div>
+  </footer>
+
+  <div id="qmenu" class="qmenu" role="menu" aria-label="Sound quality" hidden></div>
+
+  <dialog id="now" class="sheet" aria-label="Now playing">
+    <div class="now-in">
+      <div class="now-top">
+        <button class="icon-btn" id="nowClose" type="button" aria-label="Close now playing" data-icon="chevron"></button>
+        <span class="now-kind" id="nowKind">Now playing</span>
+      </div>
+      <div class="now-art"><img id="nowCover" alt="" width="400" height="400"></div>
+      <canvas id="nowString" class="now-string" aria-hidden="true"></canvas>
+      <div class="now-meta">
+        <h2 id="nowTitle"></h2>
+        <p id="nowSub"></p>
+        <p id="nowStream" class="stream"></p>
+      </div>
+      <div class="seekrow">
+        <span id="nowCur" class="time">0:00</span>
+        <input class="range" id="nowSeek" type="range" min="0" max="1000" value="0" aria-label="Seek">
+        <span id="nowDur" class="time">0:00</span>
+      </div>
+      <div class="ctrl">
+        <button class="icon-btn" id="nowShuffle" type="button" aria-label="Shuffle" aria-pressed="false" data-icon="shuffle"></button>
+        <button class="icon-btn" id="nowPrev" type="button" aria-label="Previous track" data-icon="prev"></button>
+        <button class="icon-btn play big" id="nowPlay" type="button" aria-label="Play"></button>
+        <button class="icon-btn" id="nowNext" type="button" aria-label="Next track" data-icon="next"></button>
+        <button class="icon-btn" id="nowRepeat" type="button" aria-label="Repeat: off" data-icon="repeat"></button>
+      </div>
+      <section class="panel">
+        <h3>Sound quality</h3>
+        <div id="nowQuality" class="qlist" role="radiogroup" aria-label="Sound quality"></div>
+      </section>
+      <section class="panel tools">
+        <label class="field inline"><span>Sleep timer</span>
+          <select id="nowSleep">
+            <option value="0">Off</option>
+            <option value="15">15 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="45">45 minutes</option>
+            <option value="60">1 hour</option>
+            <option value="end">End of this track</option>
+          </select>
+        </label>
+        <button class="btn" id="nowSave" type="button"></button>
+        <button class="btn" id="nowShare" type="button"></button>
+      </section>
+      <section class="panel" id="nowLyricsWrap" hidden>
+        <h3>Lyrics</h3>
+        <pre id="nowLyrics" class="lyrics"></pre>
+      </section>
+      <section class="panel">
+        <h3>Up next</h3>
+        <ol id="nowQueue" class="queue"></ol>
+      </section>
+    </div>
+  </dialog>
+
+  <dialog id="trackDlg" class="sheet narrow" aria-label="Track details"></dialog>
+  <dialog id="draftDlg" class="sheet" aria-label="Draft editor"></dialog>
+
+  <div id="toasts" class="toasts" popover="manual" aria-live="polite"></div>
+
+  <noscript><p style="padding:2rem;font-family:system-ui">This app needs JavaScript to play music.</p></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

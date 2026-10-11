@@ -1,0 +1,30 @@
+{
+  "name": "Raman Dhiman",
+  "artistName": "raman dhiman",
+  "roles": ["Singer", "Music producer", "Actor", "Script writer"],
+  "tagline": "Singer, music producer, actor and script writer.",
+  "bio": [
+    "Raman Dhiman is a singer, music producer, actor and script writer who releases music under his own name. His official pages are where new songs and updates appear first.",
+    "His catalogue on Apple Music runs from Jhooth and Dunali in 2021, through Debat (2022) and Patloo (2023), to Fame, Akdan and Shokeen Kudte Pajame De in 2024 and Panjab in 2025. Along the way he has worked with Navdeep Bhatti, Sam Star and Sammy K."
+  ],
+  "instagramHandle": "raman.dhiman.official",
+  "photo": null,
+  "links": {
+    "instagram": "https://www.instagram.com/raman.dhiman.official/",
+    "facebook": "https://www.facebook.com/RamanDhimaanOfficial/",
+    "spotify": "https://open.spotify.com/artist/4un8iu1J1FA44xG6gSWklw",
+    "apple": "https://music.apple.com/in/search?term=Raman%20Dhiman",
+    "youtube": null
+  },
+  "collaborators": [
+    { "name": "Navdeep Bhatti", "on": "Shokeen Kudte Pajame De" },
+    { "name": "Sam Star", "on": "Patloo" },
+    { "name": "Sammy K", "on": "Patloo" }
+  ],
+  "sources": [
+    "Raman Dhiman's official Facebook page (roles, Instagram handle, Spotify profile)",
+    "Apple Music (release list)",
+    "Spotify (release dates, credits, monthly listeners)",
+    "Amazon Music (release date for Shokeen Kudte Pajame De)"
+  ]
+}

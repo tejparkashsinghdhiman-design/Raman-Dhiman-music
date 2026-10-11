@@ -1,0 +1,42 @@
+name: Render app icons
+
+# Turns assets/icon.svg into the PNG sizes phones and desktops need for "Install app".
+on:
+  push:
+    paths:
+      - "assets/icon.svg"
+      - "assets/icon-maskable.svg"
+      - ".github/workflows/icons.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
+
+jobs:
+  icons:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install renderer
+        run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
+      - name: Render
+        run: |
+          mkdir -p assets/icons
+          rsvg-convert -w 192 -h 192 assets/icon.svg -o assets/icons/icon-192.png
+          rsvg-convert -w 512 -h 512 assets/icon.svg -o assets/icons/icon-512.png
+          rsvg-convert -w 512 -h 512 assets/icon-maskable.svg -o assets/icons/icon-maskable-512.png
+          rsvg-convert -w 180 -h 180 assets/icon-maskable.svg -o assets/icons/apple-touch-icon.png
+      - name: Commit icons
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/icons
+          if git diff --cached --quiet; then echo "Nothing changed."; else
+            git commit -m "Render app icons"
+            git pull --rebase --autostash
+            git push
+          fi

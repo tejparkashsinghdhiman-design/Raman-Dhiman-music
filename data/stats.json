@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-10T18:30:00Z",
+  "sources": {
+    "spotify": {
+      "artistId": "4un8iu1J1FA44xG6gSWklw",
+      "listeners": { "status": "snapshot", "value": 203, "asOf": "2026-10-10" },
+      "api": { "status": "not_configured", "followers": null, "popularity": null }
+    },
+    "apple": { "status": "snapshot", "artistId": null, "songsFound": 8 },
+    "youtube": { "status": "not_configured" }
+  },
+  "history": [
+    { "date": "2026-10-10", "monthlyListeners": 203 }
+  ],
+  "tracks": {}
+}

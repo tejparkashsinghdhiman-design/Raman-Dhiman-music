@@ -1,0 +1,14 @@
+{
+  "name": "raman-dhiman-music",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Official music app for Raman Dhiman: lossless streaming, live stats, private drafts.",
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "audio": "node scripts/process-audio.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
