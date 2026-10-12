@@ -1,81 +1,161 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T00:00:00Z",
+  "generatedAt": "2026-10-12T06:05:19.194Z",
   "tracks": [
     {
       "id": "panjab",
       "title": "Panjab",
-      "artists": ["Raman Dhiman"],
+      "artists": [
+        "Raman Dhiman"
+      ],
       "type": "Single",
       "year": 2025,
-      "releaseDate": null,
-      "durationSec": null,
+      "releaseDate": "2025-03-31",
+      "durationSec": 178,
       "credits": [],
       "lyrics": null,
-      "links": { "spotify": null, "apple": null, "youtube": null },
-      "audio": {},
+      "links": {
+        "spotify": null,
+        "apple": "https://music.apple.com/in/album/panjab/1881690182?i=1881690183&uo=4",
+        "youtube": null
+      },
+      "audio": {
+        "preview": {
+          "src": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/27/6b/84/276b843c-00ea-da96-ece7-89923d857db9/mzaf_3536318385148930212.plus.aac.p.m4a",
+          "format": "AAC",
+          "seconds": 30,
+          "source": "Apple Music preview"
+        }
+      },
       "source": "Apple Music; announced on Raman's official Facebook page",
-      "note": null
+      "note": null,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5e/0b/ab/5e0babab-cf73-baa7-8f22-8593dd021547/8721253831068.jpg/600x600bb.jpg",
+      "genre": "Hip-Hop/Rap"
     },
     {
       "id": "fame",
       "title": "Fame",
-      "artists": ["Raman Dhiman"],
+      "artists": [
+        "Raman Dhiman"
+      ],
       "type": "Single",
       "year": 2024,
-      "releaseDate": null,
-      "durationSec": null,
+      "releaseDate": "2024-02-13",
+      "durationSec": 150,
       "credits": [],
       "lyrics": null,
-      "links": { "spotify": null, "apple": null, "youtube": null },
-      "audio": {},
+      "links": {
+        "spotify": null,
+        "apple": "https://music.apple.com/in/album/fame/1881468307?i=1881468311&uo=4",
+        "youtube": null
+      },
+      "audio": {
+        "preview": {
+          "src": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ea/e4/c3/eae4c3a0-b751-c870-a90d-7c1431bd9aac/mzaf_3960688408053953454.plus.aac.p.m4a",
+          "format": "AAC",
+          "seconds": 30,
+          "source": "Apple Music preview"
+        }
+      },
       "source": "Apple Music",
-      "note": null
+      "note": null,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f8/dd/9b/f8dd9b39-ff36-3502-85ee-8bd9769a57b1/8721253552109.jpg/600x600bb.jpg",
+      "genre": "Hip-Hop/Rap"
     },
     {
       "id": "akdan",
       "title": "Akdan",
-      "artists": ["Raman Dhiman"],
+      "artists": [
+        "Raman Dhiman"
+      ],
       "type": "Single",
       "year": 2024,
       "releaseDate": "2024-08-17",
-      "durationSec": null,
+      "durationSec": 162,
       "credits": [],
       "lyrics": null,
-      "links": { "spotify": null, "apple": null, "youtube": null },
-      "audio": {},
+      "links": {
+        "spotify": null,
+        "apple": "https://music.apple.com/in/album/akdan/1881468082?i=1881468083&uo=4",
+        "youtube": null
+      },
+      "audio": {
+        "preview": {
+          "src": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d4/7e/bb/d47ebbff-fa1a-f2ed-9c98-c779befa0caf/mzaf_11252891038670961635.plus.aac.p.m4a",
+          "format": "AAC",
+          "seconds": 30,
+          "source": "Apple Music preview"
+        }
+      },
       "source": "Apple Music",
-      "note": null
+      "note": null,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9a/e0/65/9ae065f9-0237-509e-c66c-a48f966b34e3/8721253552161.jpg/600x600bb.jpg",
+      "genre": "Hip-Hop/Rap"
     },
     {
       "id": "shokeen-kudte-pajame-de",
       "title": "Shokeen Kudte Pajame De",
-      "artists": ["Raman Dhiman", "Navdeep Bhatti"],
+      "artists": [
+        "Raman Dhiman",
+        "Navdeep Bhatti"
+      ],
       "type": "Single",
       "year": 2024,
       "releaseDate": "2024-04-08",
       "durationSec": 248,
-      "credits": [{ "name": "Navdeep Bhatti", "role": "Featured artist" }],
+      "credits": [
+        {
+          "name": "Navdeep Bhatti",
+          "role": "Featured artist"
+        }
+      ],
       "lyrics": null,
-      "links": { "spotify": "https://open.spotify.com/album/7kFtPh2Vv4TT8tYEFUCQv0", "apple": null, "youtube": null },
-      "audio": {},
+      "links": {
+        "spotify": "https://open.spotify.com/album/7kFtPh2Vv4TT8tYEFUCQv0",
+        "apple": "https://music.apple.com/in/album/shokeen-kudte-pajame-de-feat-navdeep-bhatti/1881467787?i=1881467789&uo=4",
+        "youtube": null
+      },
+      "audio": {
+        "preview": {
+          "src": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7b/ae/7d/7bae7d35-9a9f-d56f-a9d3-c874c01fc843/mzaf_10108634104084921581.plus.aac.p.m4a",
+          "format": "AAC",
+          "seconds": 30,
+          "source": "Apple Music preview"
+        }
+      },
       "source": "Apple Music, Amazon Music, Spotify",
-      "note": "Apple Music and Amazon Music list 8 April 2024. Spotify lists the same single under Navdeep Bhatti with an 8 April 2015 date (Rajasthan Records)."
+      "note": "Apple Music and Amazon Music list 8 April 2024. Spotify lists the same single under Navdeep Bhatti with an 8 April 2015 date (Rajasthan Records).",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/65/79/4d/65794d02-bd17-01b4-6946-f60065919dc3/8721253551973.jpg/600x600bb.jpg",
+      "genre": "Dance"
     },
     {
       "id": "patloo",
       "title": "Patloo",
-      "artists": ["Raman Dhiman", "Sam Star", "Sammy K"],
+      "artists": [
+        "Raman Dhiman",
+        "Sam Star",
+        "Sammy K"
+      ],
       "type": "Single",
       "year": 2023,
       "releaseDate": "2023-03-03",
       "durationSec": 214,
       "credits": [
-        { "name": "Sam Star", "role": "Credited artist" },
-        { "name": "Sammy K", "role": "Credited artist" }
+        {
+          "name": "Sam Star",
+          "role": "Credited artist"
+        },
+        {
+          "name": "Sammy K",
+          "role": "Credited artist"
+        }
       ],
       "lyrics": null,
-      "links": { "spotify": "https://open.spotify.com/track/7nyZo9FGzx70DlETiBSNMq", "apple": null, "youtube": null },
+      "links": {
+        "spotify": "https://open.spotify.com/track/7nyZo9FGzx70DlETiBSNMq",
+        "apple": null,
+        "youtube": null
+      },
       "audio": {},
       "source": "Apple Music, Spotify",
       "note": "Spotify credits this track to Sam Star, Raman Dhiman and Sammy K."
@@ -83,47 +163,196 @@
     {
       "id": "debat",
       "title": "Debat",
-      "artists": ["Raman Dhiman"],
+      "artists": [
+        "Raman Dhiman"
+      ],
       "type": "Single",
       "year": 2022,
-      "releaseDate": null,
-      "durationSec": null,
+      "releaseDate": "2022-10-13",
+      "durationSec": 190,
       "credits": [],
       "lyrics": null,
-      "links": { "spotify": null, "apple": null, "youtube": null },
-      "audio": {},
+      "links": {
+        "spotify": null,
+        "apple": "https://music.apple.com/in/album/debat/1887498972?i=1887498978&uo=4",
+        "youtube": null
+      },
+      "audio": {
+        "preview": {
+          "src": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/91/12/54/911254f9-7fd6-c9e1-9cb2-16853b958a79/mzaf_10306519751754890684.plus.aac.p.m4a",
+          "format": "AAC",
+          "seconds": 30,
+          "source": "Apple Music preview"
+        }
+      },
       "source": "Apple Music",
-      "note": null
+      "note": null,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/04/2b/ec/042bec1f-1cfd-f768-97f0-9d3331bca601/5063916853592_cover.jpg/600x600bb.jpg",
+      "genre": "Folk"
     },
     {
       "id": "jhooth",
       "title": "Jhooth",
-      "artists": ["Raman Dhiman"],
+      "artists": [
+        "Raman Dhiman"
+      ],
       "type": "Single",
       "year": 2021,
-      "releaseDate": null,
-      "durationSec": null,
+      "releaseDate": "2021-12-10",
+      "durationSec": 199,
       "credits": [],
       "lyrics": null,
-      "links": { "spotify": null, "apple": null, "youtube": null },
-      "audio": {},
+      "links": {
+        "spotify": null,
+        "apple": "https://music.apple.com/in/album/jhooth/1880919887?i=1880919888&uo=4",
+        "youtube": null
+      },
+      "audio": {
+        "preview": {
+          "src": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/37/8f/3d/378f3d0a-2d56-c780-b56d-5471dfb863be/mzaf_14401763358141116381.plus.aac.p.m4a",
+          "format": "AAC",
+          "seconds": 30,
+          "source": "Apple Music preview"
+        }
+      },
       "source": "Apple Music",
-      "note": null
+      "note": null,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/27/b9/e8/27b9e8e5-3201-457a-46e5-d0892be14182/859781969477.jpg/600x600bb.jpg",
+      "genre": "Hip-Hop/Rap"
     },
     {
       "id": "dunali",
       "title": "Dunali",
-      "artists": ["Raman Dhiman"],
+      "artists": [
+        "Raman Dhiman"
+      ],
       "type": "Single",
       "year": 2021,
-      "releaseDate": null,
-      "durationSec": null,
+      "releaseDate": "2021-08-17",
+      "durationSec": 190,
       "credits": [],
       "lyrics": null,
-      "links": { "spotify": null, "apple": null, "youtube": null },
-      "audio": {},
+      "links": {
+        "spotify": null,
+        "apple": "https://music.apple.com/in/album/dunali/1881468022?i=1881468023&uo=4",
+        "youtube": null
+      },
+      "audio": {
+        "preview": {
+          "src": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1c/39/82/1c39828a-fd6c-baff-a9c0-dab68605fcd1/mzaf_16348370543189701812.plus.aac.p.m4a",
+          "format": "AAC",
+          "seconds": 30,
+          "source": "Apple Music preview"
+        }
+      },
       "source": "Apple Music",
-      "note": null
+      "note": null,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/45/9e/11/459e11c7-7fe2-64db-78cf-2ff310044093/8721253551997.jpg/600x600bb.jpg",
+      "genre": "Hip-Hop/Rap"
+    },
+    {
+      "id": "mohali",
+      "title": "Mohali",
+      "type": "Single",
+      "year": 2024,
+      "releaseDate": "2024-01-03",
+      "durationSec": 166,
+      "source": "Apple Music (auto-added)",
+      "audio": {
+        "preview": {
+          "src": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/52/40/06/524006ef-ace6-1842-d6aa-06d6b5e58665/mzaf_13048124375995624200.plus.aac.p.m4a",
+          "format": "AAC",
+          "seconds": 30,
+          "source": "Apple Music preview"
+        }
+      },
+      "links": {
+        "apple": "https://music.apple.com/in/album/mohali/1881469064?i=1881469065&uo=4"
+      },
+      "credits": [],
+      "artists": [
+        "Raman Dhiman"
+      ],
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4a/01/4b/4a014b59-f7c5-af10-ab5d-a34e9485cae3/8721253557586.jpg/600x600bb.jpg",
+      "genre": "Hip-Hop/Rap"
+    },
+    {
+      "id": "wakh-feat-sam-star",
+      "title": "Wakh (feat. Sam Star)",
+      "type": "Single",
+      "year": 2022,
+      "releaseDate": "2022-08-16",
+      "durationSec": 260,
+      "source": "Apple Music (auto-added)",
+      "audio": {
+        "preview": {
+          "src": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b9/2f/2b/b92f2b46-a7a7-7c41-bd2a-871c2dd09b92/mzaf_4261174220080702129.plus.aac.p.m4a",
+          "format": "AAC",
+          "seconds": 30,
+          "source": "Apple Music preview"
+        }
+      },
+      "links": {
+        "apple": "https://music.apple.com/in/album/wakh-feat-sam-star/1880920001?i=1880920002&uo=4"
+      },
+      "credits": [],
+      "artists": [
+        "Raman Dhiman"
+      ],
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/18/35/8b/18358bd0-053b-4d61-7657-4c2ac0de314a/859781970930.jpg/600x600bb.jpg",
+      "genre": "R&B/Soul"
+    },
+    {
+      "id": "villain",
+      "title": "Villain",
+      "type": "Single",
+      "year": 2025,
+      "releaseDate": "2025-09-20",
+      "durationSec": 145,
+      "source": "Apple Music (auto-added)",
+      "audio": {
+        "preview": {
+          "src": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e9/63/d7/e963d7ae-cf43-0a3e-f28e-e5eafa0498ff/mzaf_3648529556008218280.plus.aac.p.m4a",
+          "format": "AAC",
+          "seconds": 30,
+          "source": "Apple Music preview"
+        }
+      },
+      "links": {
+        "apple": "https://music.apple.com/in/album/villain/1881798559?i=1881798560&uo=4"
+      },
+      "credits": [],
+      "artists": [
+        "Raman Dhiman"
+      ],
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/eb/1b/e3/eb1be32e-600d-a1dd-b3cb-6b2f963fdae9/8721416170195.jpg/600x600bb.jpg",
+      "genre": "Hip-Hop/Rap"
+    },
+    {
+      "id": "mang-lai-hath-feat-raman-dhiman",
+      "title": "Mang Lai Hath (feat. Raman Dhiman)",
+      "type": "Single",
+      "year": 2020,
+      "releaseDate": "2020-07-24",
+      "durationSec": 196,
+      "source": "Apple Music (auto-added)",
+      "audio": {
+        "preview": {
+          "src": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/d5/14/a1/d514a1f1-3cfa-1219-d541-b73a40321102/mzaf_8967796643550963372.plus.aac.p.m4a",
+          "format": "AAC",
+          "seconds": 30,
+          "source": "Apple Music preview"
+        }
+      },
+      "links": {
+        "apple": "https://music.apple.com/in/album/mang-lai-hath-feat-raman-dhiman/1527736116?i=1527736117&uo=4"
+      },
+      "credits": [],
+      "artists": [
+        "Raman Dhiman"
+      ],
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/48/d3/ef/48d3efaf-fc3a-7962-7516-165bae8f2743/5057728310534_cover.jpg/600x600bb.jpg",
+      "genre": "Indian"
     }
   ]
 }
