@@ -1,0 +1,106 @@
+name: Build Android app
+
+# Wraps the live web app in a small Android shell (Capacitor) and publishes the APK as a GitHub Release asset.
+# The app inside the shell is always the current website, so the APK itself rarely needs rebuilding.
+# Download link used by the in-app button:
+#   https://github.com/<owner>/<repo>/releases/download/android-latest/raman-dhiman.apk
+on:
+  push:
+    paths:
+      - "android-app/**"
+      - "assets/icon.svg"
+      - "assets/icon-maskable.svg"
+      - ".github/workflows/android.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-build
+  cancel-in-progress: false
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        shell: bash
+    env:
+      BUILD_LOG: ${{ runner.temp }}/build.log
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Install the SVG renderer
+        run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
+
+      - name: Install Capacitor
+        working-directory: android-app
+        run: npm install --no-audit --no-fund 2>&1 | tee -a "$BUILD_LOG"
+
+      - name: Create the Android project
+        working-directory: android-app
+        run: npx cap add android 2>&1 | tee -a "$BUILD_LOG"
+
+      - name: Brand it (icon, splash, microphone permission)
+        working-directory: android-app
+        run: python3 brand.py 2>&1 | tee -a "$BUILD_LOG"
+
+      - name: Sync web assets
+        working-directory: android-app
+        run: npx cap sync android 2>&1 | tee -a "$BUILD_LOG"
+
+      - name: Make sure the Android SDK pieces are present
+        run: |
+          SDKM="${ANDROID_HOME:-$ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager"
+          if [ -x "$SDKM" ]; then
+            yes | "$SDKM" --licenses >/dev/null 2>&1 || true
+            "$SDKM" "platforms;android-35" "build-tools;35.0.0" 2>&1 | tail -5 | tee -a "$BUILD_LOG" || true
+          else
+            echo "sdkmanager not found; relying on Gradle to fetch what it needs" | tee -a "$BUILD_LOG"
+          fi
+
+      - name: Build the APK
+        working-directory: android-app/android
+        run: ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee -a "$BUILD_LOG"
+
+      - name: Collect the APK
+        run: |
+          cp android-app/android/app/build/outputs/apk/debug/app-debug.apk raman-dhiman.apk
+          ls -l raman-dhiman.apk
+
+      - name: Publish to the android-latest release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NOTES="Android app for Raman Dhiman. Open this page on your phone, download raman-dhiman.apk, tap it, and allow installing from this source when Android asks. The app opens the live website, so songs and stats are always current."
+          if gh release view android-latest >/dev/null 2>&1; then
+            gh release edit android-latest --notes "$NOTES" --latest=false
+          else
+            gh release create android-latest --target "$GITHUB_SHA" --title "Raman Dhiman for Android" --notes "$NOTES" --latest=false
+          fi
+          gh release upload android-latest raman-dhiman.apk --clobber
+
+      # Debug aid. If any step above fails, the tail of the build log is pushed to a throwaway branch so it can be read.
+      - name: Save the build log to the ci-logs branch (only when something failed)
+        if: failure()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          tail -n 300 "$BUILD_LOG" > "$RUNNER_TEMP/tail.log" 2>/dev/null || echo "no log was written" > "$RUNNER_TEMP/tail.log"
+          git checkout --orphan ci-logs
+          git rm -rf . >/dev/null 2>&1 || true
+          cp "$RUNNER_TEMP/tail.log" android-build-log.txt
+          git add android-build-log.txt
+          git commit -m "Android build log, run $GITHUB_RUN_ID"
+          git push --force origin ci-logs

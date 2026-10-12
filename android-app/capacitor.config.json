@@ -1,0 +1,13 @@
+{
+  "appId": "com.ramandhiman.music",
+  "appName": "Raman Dhiman",
+  "webDir": "www",
+  "server": {
+    "url": "https://tejparkashsinghdhiman-design.github.io/Raman-Dhiman-music/",
+    "errorPath": "error.html"
+  },
+  "android": {
+    "appendUserAgent": "RamanDhimanApp/1.0",
+    "allowMixedContent": false
+  }
+}

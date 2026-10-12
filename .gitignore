@@ -1,3 +1,6 @@
 node_modules/
 .DS_Store
 *.log
+android-app/node_modules/
+android-app/android/
+android-app/package-lock.json
