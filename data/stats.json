@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13T14:18:16.537Z",
+  "updatedAt": "2026-10-13T22:50:03.746Z",
   "sources": {
     "spotify": {
       "artistId": "4un8iu1J1FA44xG6gSWklw",
@@ -14,17 +14,17 @@
         "followers": null,
         "popularity": null
       },
-      "checkedAt": "2026-10-13T14:18:16.537Z"
+      "checkedAt": "2026-10-13T22:50:03.746Z"
     },
     "apple": {
       "status": "ok",
       "artistId": 981310484,
       "songsFound": 11,
-      "checkedAt": "2026-10-13T14:18:16.537Z"
+      "checkedAt": "2026-10-13T22:50:03.746Z"
     },
     "youtube": {
       "status": "not_configured",
-      "checkedAt": "2026-10-13T14:18:16.537Z"
+      "checkedAt": "2026-10-13T22:50:03.746Z"
     }
   },
   "history": [
