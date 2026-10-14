@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-14T17:17:00.102Z",
+  "updatedAt": "2026-10-14T21:45:39.956Z",
   "sources": {
     "spotify": {
       "artistId": "4un8iu1J1FA44xG6gSWklw",
       "listeners": {
         "status": "ok",
-        "value": 173,
+        "value": 171,
         "asOf": "2026-10-14"
       },
       "api": {
@@ -14,17 +14,17 @@
         "followers": null,
         "popularity": null
       },
-      "checkedAt": "2026-10-14T17:17:00.102Z"
+      "checkedAt": "2026-10-14T21:45:39.956Z"
     },
     "apple": {
       "status": "ok",
       "artistId": 981310484,
       "songsFound": 11,
-      "checkedAt": "2026-10-14T17:17:00.102Z"
+      "checkedAt": "2026-10-14T21:45:39.956Z"
     },
     "youtube": {
       "status": "not_configured",
-      "checkedAt": "2026-10-14T17:17:00.102Z"
+      "checkedAt": "2026-10-14T21:45:39.956Z"
     }
   },
   "history": [
@@ -42,7 +42,7 @@
     },
     {
       "date": "2026-10-14",
-      "monthlyListeners": 173
+      "monthlyListeners": 171
     }
   ],
   "tracks": {}
